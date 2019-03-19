@@ -39,6 +39,7 @@ mymap.keys // returns the keys
 mymap.values // returns values
 
 // Collections Assesment
+var list3 = List(2,3,1,4,5,6,6,1,2)
 val test_list2 = List(6,7)
 val test_list = List(1,2,3,4,5) // Find if te lsit contains the #3
 test_list.indexOf(3) // Answer \\ test_list.contains(3) wil work
@@ -46,3 +47,8 @@ test_list.indexOf(3) // Answer \\ test_list.contains(3) wil work
 list.sum // Should be 15
 // Create an array of all the odd number from 0 to 15
 var test_array = (1,3,5,7,9,11,13,15)
+// What are the unique elements of list3
+list3.distinct // Will return the unique numbers in the list
+var test_map = collection.mutable.Map(("Sammy",3),("Frankie",7),("John",45))
+test_map.keys // Prints out all the keys
+test_map += ("Mike",27) // Add a vlaue to the map
