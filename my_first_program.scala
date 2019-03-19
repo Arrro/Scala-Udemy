@@ -39,3 +39,10 @@ mymap.keys // returns the keys
 mymap.values // returns values
 
 // Collections Assesment
+val test_list2 = List(6,7)
+val test_list = List(1,2,3,4,5) // Find if te lsit contains the #3
+test_list.indexOf(3) // Answer \\ test_list.contains(3) wil work
+// How can you add a previous list
+list.sum // Should be 15
+// Create an array of all the odd number from 0 to 15
+var test_array = (1,3,5,7,9,11,13,15)
