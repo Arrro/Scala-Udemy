@@ -85,5 +85,5 @@ println(!(1==1)) // Checking for inequality
 
 // For Loops
 for (item <- List(1,2,3)){
-    println(int)
+    println()
 }
