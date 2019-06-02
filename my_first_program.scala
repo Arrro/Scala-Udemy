@@ -1,3 +1,4 @@
+// Error can be ignored as its false
 println("Hello World")
 
 val st: String = "This is a long string"
