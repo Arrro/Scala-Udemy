@@ -42,7 +42,7 @@ mymap.values // returns values
 // Collections Assesment
 var list3 = List(2,3,1,4,5,6,6,1,2)
 val test_list2 = List(6,7)
-val test_list = List(1,2,3,4,5) // Find if te lsit contains the #3
+val test_list = List(1,2,3,4,5) // Find if the lsit contains the #3
 test_list.indexOf(3) // Answer \\ test_list.contains(3) wil work
 test_list.contains(3) // Also works here to return a boolean
 // How can you add a previous list
@@ -85,6 +85,108 @@ println((1==2) || (2==2)) // One can be true for it to be true
 println(!(1==1)) // Checking for inequality
 
 // For Loops
-for (item <- List(1,2,3)){
-    println()
+for (num <- List(1,2,3)){
+    println(num) // Can put a string as well to print 3 times
 }
+// Array
+for (numArray <- Array.range(0,5)){
+    println(numArray)
+}
+// Set
+for (numSet <- Set(1,2,3)){
+    println(numSet)
+}
+// Flow loop control
+for (numFlow <- Range (0,10)){
+    if (numFlow%2 == 0){
+        println (s"$numFlow is even")
+    }else{
+        println (s"$numFlow is odd")
+    }
+}
+val names = List("Tyler", "David", "Jeff D", "Jeff S", "Christian", "Brent", "Steve", "Naris")
+
+for (name <- names)
+{
+    if (name.startsWith("T")){
+        println(s"$name's name starts with a T")
+    }else if(name.startsWith("J")){
+            println(s"$name's name starts with a J")
+    }else {
+        println(s"Sorry $name you didnt make the cut")
+    }
+}
+
+// While loops
+var x = 0
+
+while(x < 5){
+    println(s"x is currently $x")
+    println("x is still less than 5, adding 1 to x")
+    x = x+1
+}
+
+import util.control.Breaks._
+
+var y = 0
+
+while (y < 10){
+    println(s"y is currently $y")
+    println("y is still less than ten, add 1 to y")
+    y = y+1
+    if (y==3) break
+}
+
+// Functions
+def simple (): Unit = {
+    println("simple print")
+}
+
+simple()
+
+def adder(num1:Int,num2:Int): Int = {
+    return num1 + num2
+}
+
+def greetName(name:String): String={
+    return s"Hello $name"
+}
+
+val fullgreet = greetName("Jose")
+println(fullgreet)
+
+def isPrime(numcheck: Int): Boolean = {
+    for (n <- Range(2,numcheck)){
+        if(numcheck%n ==0){
+            return false
+        }
+    }
+    return true
+}
+
+println(isPrime(10))
+println(isPrime(23))
+
+val numbers = List(1,2,3,7)
+
+def check(nums:List[Int]): List[Int]={
+    return nums
+}
+
+println(check(numbers))
+
+// Programming exercises
+
+// 1.) Check for Single Even:
+// Write a function that take sin an integer and retruns a Boolean indicating whether or not it is even. See if you can write this in one line!
+// 2.) Check for Evens in a list;
+// Write a function that returns True if there is an even number inside of a list, otherwise, return false.
+// 3.) Lucky Number Seven:
+// take in a lsit of integers and calculate their sum. However, sevens are lucky and they should be counted twice, meaning their value is 14 for the sum. Assume the list isnt empty.
+// 4.) Can you balance?
+// Given a non-empty list of integers, return true if there is a place to split the list so that the sum of the numbers on one side is equal to the sum of the numbers on the other side.
+// For example, given the list )1,5,3,3) would reutrn true, you can spli it in the middle. Another example )7,3,4) would return true 3+5=7. 
+// Remember you just need to return the boolean, not the split index point.
+// 5.) Palindrome Check
+// Given a string, return a boolean indicating whether or not it is a plaindrome. (Spelled the same forwards and backwords). Try exploring methods to help you.
+
