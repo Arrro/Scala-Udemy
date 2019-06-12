@@ -157,7 +157,7 @@ println(fullgreet)
 
 def isPrime(numcheck: Int): Boolean = {
     for (n <- Range(2,numcheck)){
-        if(numcheck%n ==0){
+        if(numcheck%n == 0){
             return false
         }
     }
@@ -169,7 +169,7 @@ println(isPrime(23))
 
 val numbers = List(1,2,3,7)
 
-def check(nums:List[Int]): List[Int]={
+def check(nums: List[Int]): List[Int]={
     return nums
 }
 
@@ -178,11 +178,11 @@ println(check(numbers))
 // Programming exercises
 
 // 1.) Check for Single Even:
-// Write a function that take sin an integer and retruns a Boolean indicating whether or not it is even. See if you can write this in one line!
+// Write a function that takes in an integer and retruns a Boolean indicating whether or not it is even. See if you can write this in one line!
 // 2.) Check for Evens in a list;
 // Write a function that returns True if there is an even number inside of a list, otherwise, return false.
 // 3.) Lucky Number Seven:
-// take in a lsit of integers and calculate their sum. However, sevens are lucky and they should be counted twice, meaning their value is 14 for the sum. Assume the list isnt empty.
+// Take in a list of integers and calculate their sum. However, sevens are lucky and they should be counted twice, meaning their value is 14 for the sum. Assume the list isnt empty.
 // 4.) Can you balance?
 // Given a non-empty list of integers, return true if there is a place to split the list so that the sum of the numbers on one side is equal to the sum of the numbers on the other side.
 // For example, given the list )1,5,3,3) would reutrn true, you can spli it in the middle. Another example )7,3,4) would return true 3+5=7. 
@@ -190,3 +190,38 @@ println(check(numbers))
 // 5.) Palindrome Check
 // Given a string, return a boolean indicating whether or not it is a plaindrome. (Spelled the same forwards and backwords). Try exploring methods to help you.
 
+// #1 Answer
+def num1Check(isEven: Int): Boolean = { // isEven is the input variable with the type Int, return a Boolean
+    if (isEven%2 == 0){ // Modulo 2 divides the # by itself which has no remaimder (0)
+        return true // return true if the number given returns no remainder (even)
+    } else{
+        return false
+    }
+}
+
+println(num1Check(10)) // Number given to the function
+
+// #2 Answer
+val num2Evenlist = List(1,3,6,3,2,7,5,9,10,12) // Even list of number to pass in
+val num2Oddlist = List(1,3,5,7,9,11,13) // Odd list of numbers to pass in
+
+def num2Check(nums: List[Int]): Boolean = {
+    for(num <- nums){ // interate through list
+        if(num%2 == 0){ // modulo 2 to determine evens
+            return true
+        }
+    }
+    return false // required this to be returned outisde the for loop to close the loop
+}                // Got type mismatch with Unit being seen and expecting boolean, need this.
+
+println(num2Check(num2Evenlist)) // parse in lists
+println(num2Check(num2Oddlist))
+
+// #3 Answer
+val num3List1 = List(1,2,3,4) // Should equal 10
+val num3List2 = List(1,2,3,4,7) // Should equal 24
+val num3List3 = List(1,2,3,4,7,7) // Should equal 38
+
+def num3Check(lucky: List[Int]): Int = {
+    
+}
