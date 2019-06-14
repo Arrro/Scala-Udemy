@@ -181,8 +181,8 @@ println(check(numbers))
 // Write a function that takes in an integer and retruns a Boolean indicating whether or not it is even. See if you can write this in one line!
 // 2.) Check for Evens in a list;
 // Write a function that returns True if there is an even number inside of a list, otherwise, return false.
-// 3.) Lucky Number Seven:
-// Take in a list of integers and calculate their sum. However, sevens are lucky and they should be counted twice, meaning their value is 14 for the sum. Assume the list isnt empty.
+// 3.) Lucky Number xen:
+// Take in a list of integers and calculate their sum. However, xens are lucky and they should be counted twice, meaning their value is 14 for the sum. Assume the list isnt empty.
 // 4.) Can you balance?
 // Given a non-empty list of integers, return true if there is a place to split the list so that the sum of the numbers on one side is equal to the sum of the numbers on the other side.
 // For example, given the list )1,5,3,3) would reutrn true, you can spli it in the middle. Another example )7,3,4) would return true 3+5=7. 
@@ -191,8 +191,8 @@ println(check(numbers))
 // Given a string, return a boolean indicating whether or not it is a plaindrome. (Spelled the same forwards and backwords). Try exploring methods to help you.
 
 // #1 Answer
-def num1Check(isEven: Int): Boolean = { // isEven is the input variable with the type Int, return a Boolean
-    if (isEven%2 == 0){ // Modulo 2 divides the # by itself which has no remaimder (0)
+def num1Check(ixen: Int): Boolean = { // ixen is the input variable with the type Int, return a Boolean
+    if (ixen%2 == 0){ // Modulo 2 divides the # by itself which has no remaimder (0)
         return true // return true if the number given returns no remainder (even)
     } else{
         return false
@@ -221,16 +221,26 @@ println(num2Check(num2Oddlist))
 val num3List1 = List(1,2,3,4) // Should equal 10
 val num3List2 = List(1,2,3,4,7) // Should equal 24
 val num3List3 = List(1,2,3,4,7,7) // Should equal 38
-
-var x = 0
+val num3List4 = List(1,2,3,4,7,7,7) // Should equal 52
+val num3List5 = List(1,2,3,4,7,7,7,7) // Should equal 66
 
 def num3Check(lucky: List[Int]): Int = {
+    var x = 0
+    var y = 0
+
     for(x <- lucky){
-        x + x
+        if(x == 7){
+            y = x*2
+            return y+lucky.sum // This is adding the entire list + 14 (7*2) once. FIX ME. I AM BROKE.
+        }else{
+            // Nothing
+        }
     }
-    return x
+    return lucky.sum
 }
 
 println(num3Check(num3List1))
 println(num3Check(num3List2))
 println(num3Check(num3List3))
+println(num3Check(num3List4))
+println(num3Check(num3List5))
