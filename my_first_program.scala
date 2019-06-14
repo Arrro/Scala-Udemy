@@ -144,11 +144,11 @@ def simple (): Unit = {
 
 simple()
 
-def adder(num1:Int,num2:Int): Int = {
+def adder(num1: Int,num2: Int): Int = {
     return num1 + num2
 }
 
-def greetName(name:String): String={
+def greetName(name: String): String={
     return s"Hello $name"
 }
 
@@ -222,6 +222,15 @@ val num3List1 = List(1,2,3,4) // Should equal 10
 val num3List2 = List(1,2,3,4,7) // Should equal 24
 val num3List3 = List(1,2,3,4,7,7) // Should equal 38
 
+var x = 0
+
 def num3Check(lucky: List[Int]): Int = {
-    
+    for(x <- lucky){
+        x + x
+    }
+    return x
 }
+
+println(num3Check(num3List1))
+println(num3Check(num3List2))
+println(num3Check(num3List3))
