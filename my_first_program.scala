@@ -227,7 +227,7 @@ val num3List5 = List(1,2,3,4,7,7,7,7) // Should equal 66
 def num3Check(lucky: List[Int]): Int = {
     var x = 0
     var y = 0
-
+// Scala freaks out if this is blank
     for(x <- lucky){
         if(x == 7){
             y = x*2
