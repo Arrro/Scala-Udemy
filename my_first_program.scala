@@ -229,14 +229,14 @@ def num3Check(lucky: List[Int]): Int = {
     var y = 0
 // Scala freaks out if this is blank
     for(x <- lucky){
-        if(x == 7){
-            y = x*2
-            return y+lucky.sum // This is adding the entire list + 14 (7*2) once. FIX ME. I AM BROKE.
+        if (x == 7){
+            y = y + 1 // Counts how many 7's around found in the list
+            //println(s"y is currently $y")
         }else{
             // Nothing
         }
     }
-    return lucky.sum
+    return lucky.sum + y*7 // Adds the the sum of teh list + 7 * the number of them found
 }
 
 println(num3Check(num3List1))
