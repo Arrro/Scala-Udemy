@@ -43,7 +43,7 @@ mymap.values // returns values
 var list3 = List(2,3,1,4,5,6,6,1,2)
 val test_list2 = List(6,7)
 val test_list = List(1,2,3,4,5) // Find if the lsit contains the #3
-test_list.indexOf(3) // Answer \\ test_list.contains(3) wil work
+test_list.indexOf(3) // Answer \\ test_list.contains(3) will work
 test_list.contains(3) // Also works here to return a boolean
 // How can you add a previous list
 list.sum // Should be 15
@@ -185,7 +185,7 @@ println(check(numbers))
 // Take in a list of integers and calculate their sum. However, xens are lucky and they should be counted twice, meaning their value is 14 for the sum. Assume the list isnt empty.
 // 4.) Can you balance?
 // Given a non-empty list of integers, return true if there is a place to split the list so that the sum of the numbers on one side is equal to the sum of the numbers on the other side.
-// For example, given the list )1,5,3,3) would reutrn true, you can spli it in the middle. Another example )7,3,4) would return true 3+5=7. 
+// For example, given the list (1,5,3,3) would reutrn true, you can split it in the middle. Another example (7,3,4) would return true 3+4=7. 
 // Remember you just need to return the boolean, not the split index point.
 // 5.) Palindrome Check
 // Given a string, return a boolean indicating whether or not it is a plaindrome. (Spelled the same forwards and backwords). Try exploring methods to help you.
@@ -236,7 +236,7 @@ def num3Check(lucky: List[Int]): Int = {
             // Nothing
         }
     }
-    return lucky.sum + y*7 // Adds the the sum of teh list + 7 * the number of them found
+    return lucky.sum + y*7 // Adds the the sum of the list + 7 * the number of them found
 }
 
 println(num3Check(num3List1))
@@ -244,3 +244,13 @@ println(num3Check(num3List2))
 println(num3Check(num3List3))
 println(num3Check(num3List4))
 println(num3Check(num3List5))
+
+// #4 Answer
+val num4ListTrue = List(1,4,2,3)
+val num4ListFalse = List(3,2,2)
+
+def num4Check(pally: List[Int]): Boolean = {
+    for(num <- pally){
+        if pally. // Need to determine the length and pass conditional by determining length of the list
+    }
+}
