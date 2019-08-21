@@ -246,9 +246,39 @@ println(num3Check(num3List5))
 // #4 Answer
 val num4ListTrue = List(1,4,2,3)
 val num4ListFalse = List(3,2,2)
+val num4ListTrue2 = List(3,2,1)
+val num4ListFalse2 = List(1,3,2,4)
 
 def num4Check(bally: List[Int]): Boolean = {
+    var c = 0
+    var d = 0
     for(num <- bally){
-        if bally.length
+        if (bally.length == 3){
+            var (a, b) = bally.splitAt(1)
+            c = a.sum
+            d = b.sum
+            if (c != d){
+                return false
+            }else {
+                return true
+            }
+        } else if (bally.length == 4){
+            var (a, b) = bally.splitAt(2)
+            c = a.sum
+            d = b.sum
+            if (c != d ){
+                return false
+            }else {
+                return true
+            }
+        }
     }
+    return true
 }
+
+println(num4Check(num4ListTrue))
+println(num4Check(num4ListFalse))
+println(num4Check(num4ListTrue2))
+println(num4Check(num4ListFalse2))
+
+// #5 Answer
