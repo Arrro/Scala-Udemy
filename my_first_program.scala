@@ -232,8 +232,6 @@ def num3Check(lucky: List[Int]): Int = {
         if (x == 7){
             y = y + 1 // Counts how many 7's around found in the list
             //println(s"y is currently $y")
-        }else{
-            // Nothing
         }
     }
     return lucky.sum + y*7 // Adds the the sum of the list + 7 * the number of them found
@@ -249,8 +247,8 @@ println(num3Check(num3List5))
 val num4ListTrue = List(1,4,2,3)
 val num4ListFalse = List(3,2,2)
 
-def num4Check(pally: List[Int]): Boolean = {
-    for(num <- pally){
-        if pally. // Need to determine the length and pass conditional by determining length of the list
+def num4Check(bally: List[Int]): Boolean = {
+    for(num <- bally){
+        if bally.length
     }
 }
