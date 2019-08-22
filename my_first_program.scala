@@ -281,4 +281,19 @@ println(num4Check(num4ListFalse))
 println(num4Check(num4ListTrue2))
 println(num4Check(num4ListFalse2))
 
+// #4 Anser second iteration
+val num4ListTrue = List(1,4,2,3)
+val num4ListFalse = List(3,2,2)
+val num4ListTrue2 = List(3,2,1)
+val num4ListFalse2 = List(1,3,2,4)
+
+def num4Check(bally: List[Int]): Boolean = {
+    return (bally.splitAt(bally.length/2)_1).sum == (bally.splitAt(bally.length/2)_2).sum
+}
+
+println(num4Check(num4ListTrue))
+println(num4Check(num4ListFalse))
+println(num4Check(num4ListTrue2))
+println(num4Check(num4ListFalse2))
+
 // #5 Answer
