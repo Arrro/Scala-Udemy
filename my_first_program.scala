@@ -191,21 +191,18 @@ println(check(numbers))
 // Given a string, return a boolean indicating whether or not it is a plaindrome. (Spelled the same forwards and backwords). Try exploring methods to help you.
 
 // #1 Answer
-def num1Check(ixen: Int): Boolean = { // ixen is the input variable with the type Int, return a Boolean
-    if (ixen%2 == 0){ // Modulo 2 divides the # by itself which has no remaimder (0)
-        return true // return true if the number given returns no remainder (even)
-    } else{
-        return false
-    }
+def num1(oneEven: Int): Boolean = { // ixen is the input variable with the type Int, return a Boolean
+    return (oneEven%2 == 0)
 }
 
-println(num1Check(10)) // Number given to the function
+println(num1(10)) // Number given to the function
+println(num1(11))
 
 // #2 Answer
-val num2Evenlist = List(1,3,6,3,2,7,5,9,10,12) // Even list of number to pass in
-val num2Oddlist = List(1,3,5,7,9,11,13) // Odd list of numbers to pass in
+val evens = List(1,3,6,3,2,7,5,9,10,12) // Even list of number to pass in
+val odds = List(1,3,5,7,9,11,13) // Odd list of numbers to pass in
 
-def num2Check(nums: List[Int]): Boolean = {
+def num2(nums: List[Int]): Boolean = {
     for(num <- nums){ // interate through list
         if(num%2 == 0){ // modulo 2 to determine evens
             return true
@@ -214,86 +211,40 @@ def num2Check(nums: List[Int]): Boolean = {
     return false // required this to be returned outisde the for loop to close the loop
 }                // Got type mismatch with Unit being seen and expecting boolean, need this.
 
-println(num2Check(num2Evenlist)) // parse in lists
-println(num2Check(num2Oddlist))
+println(num2(evens)) // parse in lists
+println(num2(odds))
 
 // #3 Answer
-val num3List1 = List(1,2,3,4) // Should equal 10
-val num3List2 = List(1,2,3,4,7) // Should equal 24
-val num3List3 = List(1,2,3,4,7,7) // Should equal 38
-val num3List4 = List(1,2,3,4,7,7,7) // Should equal 52
-val num3List5 = List(1,2,3,4,7,7,7,7) // Should equal 66
+val oneSeven = List(1,2,3,4,7)
+val twoSeven = List(1,2,3,4,7,7)
 
-def num3Check(lucky: List[Int]): Int = {
-    var x = 0
-    var y = 0
-// Scala freaks out if this is blank
-    for(x <- lucky){
-        if (x == 7){
-            y = y + 1 // Counts how many 7's around found in the list
-            //println(s"y is currently $y")
-        }
-    }
-    return lucky.sum + y*7 // Adds the the sum of the list + 7 * the number of them found
+def num3(sevens: List[Int]): Int = {
+    lucky.map(x => if (x == 7) 14 else x).sum
 }
 
-println(num3Check(num3List1))
-println(num3Check(num3List2))
-println(num3Check(num3List3))
-println(num3Check(num3List4))
-println(num3Check(num3List5))
+println(num3(oneSeven))
+println(num3(twoSeven))
 
-// #4 Answer
-val num4ListTrue = List(1,4,2,3)
-val num4ListFalse = List(3,2,2)
-val num4ListTrue2 = List(3,2,1)
-val num4ListFalse2 = List(1,3,2,4)
+// #4
+val num4T = List(1,4,2,3)
+val num4F = List(3,2,2)
+val num4T2 = List(3,2,1)
+val num4F2 = List(1,3,2,4)
 
-def num4Check(bally: List[Int]): Boolean = {
-    var c = 0
-    var d = 0
-    for(num <- bally){
-        if (bally.length == 3){
-            var (a, b) = bally.splitAt(1)
-            c = a.sum
-            d = b.sum
-            if (c != d){
-                return false
-            }else {
-                return true
-            }
-        } else if (bally.length == 4){
-            var (a, b) = bally.splitAt(2)
-            c = a.sum
-            d = b.sum
-            if (c != d ){
-                return false
-            }else {
-                return true
-            }
-        }
-    }
-    return true
+def num4(balance: List[Int]): Boolean = {
+    return (balance.splitAt(balance.length/2)_1).sum == (balance.splitAt(balance.length/2)_2).sum
 }
 
-println(num4Check(num4ListTrue))
-println(num4Check(num4ListFalse))
-println(num4Check(num4ListTrue2))
-println(num4Check(num4ListFalse2))
-
-// #4 Anser second iteration
-val num4ListTrue = List(1,4,2,3)
-val num4ListFalse = List(3,2,2)
-val num4ListTrue2 = List(3,2,1)
-val num4ListFalse2 = List(1,3,2,4)
-
-def num4Check(bally: List[Int]): Boolean = {
-    return (bally.splitAt(bally.length/2)_1).sum == (bally.splitAt(bally.length/2)_2).sum
-}
-
-println(num4Check(num4ListTrue))
-println(num4Check(num4ListFalse))
-println(num4Check(num4ListTrue2))
-println(num4Check(num4ListFalse2))
+println(num4(num4T))
+println(num4(num4F))
 
 // #5 Answer
+val stTr: String = "racecar"
+val stFl: String = "Taco"
+
+def num5Check(palindrome: String): Boolean = {
+    return (palindrome.reverse == palindrome)
+}
+
+println(num5Check(stTr))
+println(num5Check(stFl))
