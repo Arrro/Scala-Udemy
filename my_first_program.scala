@@ -191,9 +191,7 @@ println(check(numbers))
 // Given a string, return a boolean indicating whether or not it is a plaindrome. (Spelled the same forwards and backwords). Try exploring methods to help you.
 
 // #1 Answer
-def num1(oneEven: Int): Boolean = { // ixen is the input variable with the type Int, return a Boolean
-    return (oneEven%2 == 0)
-}
+def num1(oneEven: Int) = (oneEven%2 == 0)
 
 println(num1(10)) // Number given to the function
 println(num1(11))
@@ -218,9 +216,7 @@ println(num2(odds))
 val oneSeven = List(1,2,3,4,7)
 val twoSeven = List(1,2,3,4,7,7)
 
-def num3(sevens: List[Int]): Int = {
-    lucky.map(x => if (x == 7) 14 else x).sum
-}
+def num3(sevens: List[Int]) = sevens.map(x => if (x == 7) 14 else x).sum
 
 println(num3(oneSeven))
 println(num3(twoSeven))
@@ -228,12 +224,8 @@ println(num3(twoSeven))
 // #4
 val num4T = List(1,4,2,3)
 val num4F = List(3,2,2)
-val num4T2 = List(3,2,1)
-val num4F2 = List(1,3,2,4)
 
-def num4(balance: List[Int]): Boolean = {
-    return (balance.splitAt(balance.length/2)_1).sum == (balance.splitAt(balance.length/2)_2).sum
-}
+def num4(balance: List[Int]) = (balance.splitAt(balance.length/2)_1).sum == (balance.splitAt(balance.length/2)_2).sum
 
 println(num4(num4T))
 println(num4(num4F))
@@ -242,9 +234,7 @@ println(num4(num4F))
 val stTr: String = "racecar"
 val stFl: String = "Taco"
 
-def num5Check(palindrome: String): Boolean = {
-    return (palindrome.reverse == palindrome)
-}
+def num5Check(palindrome: String) = (palindrome.reverse == palindrome)
 
 println(num5Check(stTr))
 println(num5Check(stFl))
