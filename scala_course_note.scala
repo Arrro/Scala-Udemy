@@ -201,12 +201,13 @@ val evens = List(1,3,6,3,2,7,5,9,10,12)
 val odds = List(1,3,5,7,9,11,13)
 
 def num2(nums: List[Int]): Boolean = {
-    for(num <- nums){ // interate through list
-        if(num%2 == 0){ // modulo 2 to determine evens
+    for (num <- nums) { // interate through list
+        if (num % 2 == 0) { // modulo 2 to determine evens
             return true // Returns true when the conditional is met
         }
     }
     return false // required this to be returned outisde the for loop to close the loop. Got type mismatch with Unit being seen and expecting boolean, need this.
+}
 
 println(num2(evens))
 println(num2(odds))
@@ -237,7 +238,3 @@ def num5Check(palindrome: String) = (palindrome.reverse == palindrome) // Revers
 
 println(num5Check(stTr))
 println(num5Check(stFl))
-
-// Scala with Spark & dataframes
-
-// testing for git
