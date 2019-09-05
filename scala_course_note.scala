@@ -46,9 +46,9 @@ val test_list = List(1,2,3,4,5) // Find if the lsit contains the #3
 test_list.indexOf(3) // Answer \\ test_list.contains(3) will work
 test_list.contains(3) // Also works here to return a boolean
 // How can you add a previous list
-list.sum // Should be 15
+list3.sum // Should be 15
 // Create an array of all the odd number from 0 to 15
-Array.Range(1,16,2)
+Array.range(1,16,2)
 // What are the unique elements of list3
 list3.distinct // Will return the unique numbers in the list
 list3.toSet // This can also return unique values as a set returns non-duplicates
@@ -239,3 +239,5 @@ println(num5Check(stTr))
 println(num5Check(stFl))
 
 // Scala with Spark & dataframes
+
+// testing for git
