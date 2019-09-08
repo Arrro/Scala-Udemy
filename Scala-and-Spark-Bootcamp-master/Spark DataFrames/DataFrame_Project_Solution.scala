@@ -51,7 +51,7 @@ df.select(corr("High","Volume")).show()
 // What is the max High per year?
 val yeardf = df.withColumn("Year",year(df("Date")))
 val yearmaxs = yeardf.select($"Year",$"High").groupBy("Year").max()
-yearavgs.select($"Year",$"max(High)").show()
+yearmaxs.select($"Year",$"max(High)").show()
 
 // What is the average Close for each Calender Month?
 val monthdf = df.withColumn("Month",month(df("Date")))
