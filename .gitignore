@@ -2,3 +2,4 @@
 .bloop/
 spark-2.4.3-bin-hadoop2.7
 .build.sbt/
+.metastore_db/
