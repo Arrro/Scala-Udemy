@@ -4,23 +4,23 @@
 /////////////////////////////////////////
 
 // Import LinearRegression
-
+import org.apache.Spark.ml.regression.LinearRegression
 // Optional: Use the following code below to set the Error reporting
 import org.apache.log4j._
 Logger.getLogger("org").setLevel(Level.ERROR)
 
 
 // Start a simple Spark Session
-
+val spark = SparkSession.builder().appName("LinearRegressionExample").getOrCreate()
 // Use Spark to read in the Ecommerce Customers csv file.
-
+val data = spark.read.option("Header","true").option("inferSchema","true").format("csv").load("Ecommerce Customers")
 // Print the Schema of the DataFrame
-
+data.printSchema()
 
 // Print out an example Row
 // Various ways to do this, just
 // choose whichever way you prefer
-
+data.head()
 
 ////////////////////////////////////////////////////
 //// Setting Up DataFrame for Machine Learning ////
@@ -31,7 +31,8 @@ Logger.getLogger("org").setLevel(Level.ERROR)
 // ("label","features")
 
 // Import VectorAssembler and Vectors
-
+import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.ml.linalg.Vectors
 // Rename the Yearly Amount Spent Column as "label"
 // Also grab only the numerical columns from the data
 // Set all of this as a new dataframe called df
