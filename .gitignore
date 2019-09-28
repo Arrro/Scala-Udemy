@@ -3,4 +3,4 @@
 spark-2.4.3-bin-hadoop2.7
 .build.sbt/
 metastore_db/
-Regression/derby.log
+Scala-and-Spark-Bootcamp-master/Machine_Learning_Sections/Regression/derby.log
